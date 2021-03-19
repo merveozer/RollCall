@@ -1,4 +1,3 @@
-﻿
 namespace yoklamadeneme
 {
     partial class Form1
@@ -41,7 +40,6 @@ namespace yoklamadeneme
             this.lblSaat = new System.Windows.Forms.Label();
             this.yoklamaTakipDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btGonder = new System.Windows.Forms.Button();
-            this.btnKaydetGonder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.yoklamaTakipDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,8 +54,7 @@ namespace yoklamadeneme
             "8-B",
             "9-A",
             "9-B",
-            "10-A",
-            "10-B",
+            "10-A/B",
             "11-A",
             "11-B",
             "12-A",
@@ -146,7 +143,7 @@ namespace yoklamadeneme
             // btGonder
             // 
             this.btGonder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btGonder.Location = new System.Drawing.Point(598, 163);
+            this.btGonder.Location = new System.Drawing.Point(597, 195);
             this.btGonder.Name = "btGonder";
             this.btGonder.Size = new System.Drawing.Size(183, 34);
             this.btGonder.TabIndex = 9;
@@ -154,24 +151,12 @@ namespace yoklamadeneme
             this.btGonder.UseVisualStyleBackColor = true;
             this.btGonder.Click += new System.EventHandler(this.btGonder_Click_1);
             // 
-            // btnKaydetGonder
-            // 
-            this.btnKaydetGonder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydetGonder.Location = new System.Drawing.Point(598, 265);
-            this.btnKaydetGonder.Name = "btnKaydetGonder";
-            this.btnKaydetGonder.Size = new System.Drawing.Size(183, 34);
-            this.btnKaydetGonder.TabIndex = 10;
-            this.btnKaydetGonder.Text = "Kaydet ve Gönder";
-            this.btnKaydetGonder.UseVisualStyleBackColor = true;
-            this.btnKaydetGonder.Click += new System.EventHandler(this.btnKaydetGonder_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(805, 496);
-            this.Controls.Add(this.btnKaydetGonder);
             this.Controls.Add(this.btGonder);
             this.Controls.Add(this.lblSaat);
             this.Controls.Add(this.lblTarih);
@@ -204,7 +189,6 @@ namespace yoklamadeneme
         private System.Windows.Forms.Label lblTarih;
         private System.Windows.Forms.Label lblSaat;
         private System.Windows.Forms.Button btGonder;
-        private System.Windows.Forms.Button btnKaydetGonder;
     }
 }
 
