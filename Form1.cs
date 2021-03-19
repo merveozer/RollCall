@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -126,23 +126,15 @@ namespace yoklamadeneme
                         break;
                     case "6.DERS":
                         DersKayit("DERS6");
+                        MailAt();
                         break;
                 }
             }
         }
 
-        private void btnKaydetGonder_Click_1(object sender, EventArgs e)
+        public void MailAt()
         {
-            string sınıf = cmSinif.SelectedItem.ToString();
-            if (cmDers.SelectedIndex == -1)
-            {
-                MessageBox.Show("Lütfen ders saati seçiminizi kontrol edin!", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            if (cmDers.SelectedIndex != -1)
-            {
-                DersKayit("DERS6");
-                MessageBox.Show("Yoklamanız işlenmiş ve idareye teslim edilmiştir.", "Kariyer Mimarı Koleji", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                string sınıf = cmSinif.SelectedItem.ToString();       
                 string konum = System.Reflection.Assembly.GetEntryAssembly().Location;
                 string dosya_yolu = System.IO.Path.GetDirectoryName(konum);
 
@@ -212,7 +204,7 @@ namespace yoklamadeneme
                     guncelle.ExecuteNonQuery();
                     baglanti.Close();
                 }
-            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -231,31 +223,29 @@ namespace yoklamadeneme
             int hour = dtp.Value.Hour;
             int minute = dtp.Value.Minute;
 
-            if (cmDers.SelectedItem.ToString() == "6.DERS")
+            if (cmDers.SelectedItem.ToString() != "6.DERS")
             {
-                btGonder.Enabled = false;
-                btnKaydetGonder.Enabled = true;
-            }
 
-            else if (hour == 10 && (minute <= 10 || minute >= 50) || hour == 11 && (minute <= 50 && minute >= 40) ||
-                hour == 12 && (minute >= 30 && minute <= 40) || hour == 13 && (minute >= 50 && minute <= 59) ||
-                hour == 14 && (minute <= 50 && minute >= 40))
+            if (hour == 10 && (minute <= 10 || minute >= 50) || hour == 11 && (minute <= 50 && minute >= 40) || hour == 12 && (minute >= 30 && minute <= 40) ||
+                hour == 13 && (minute >= 50 && minute <= 59) || hour == 14 && (minute <= 50 && minute >= 40))
             {
                 btGonder.Enabled = true;
-                btnKaydetGonder.Enabled = false;
             }
 
             else
             {
                 btGonder.Enabled = false;
-                btnKaydetGonder.Enabled = false;
-
-
             }
 
+            }
+            if (cmDers.SelectedItem.ToString() == "6.DERS")
+            {
+                btGonder.Enabled = true;
+            }
         }
     }
 }
+
 
 
 
